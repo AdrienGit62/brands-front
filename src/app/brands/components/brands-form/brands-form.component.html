@@ -1,0 +1,50 @@
+<p>brands-form works!</p>
+
+<h2 mat-dialog-title>{{ isUpdateMode ? "Update" : "Add" }} brands form</h2>
+
+<form [formGroup]="brandsForm" (ngSubmit)="onSubmit(brandsForm.value)">
+  <mat-dialog-content class="mat-typography">
+    <mat-form-field appearance="fill">
+      <mat-label>Brand name</mat-label>
+      <input matInput formControlName="brand_name" />
+    </mat-form-field>
+    <br />
+    <mat-form-field appearance="fill">
+      <mat-label>Creator name</mat-label>
+      <input matInput formControlName="creator_fullname" />
+    </mat-form-field>
+    <br />
+    <mat-form-field appearance="fill">
+      <mat-label>Contact email</mat-label>
+      <input matInput formControlName="contact_email" />
+    </mat-form-field>
+    <br />
+    <mat-form-field appearance="fill" class="w-100">
+      <mat-label>Type de véhicule</mat-label>
+      <mat-select formControlName="type_of_car">
+        <mat-option>--</mat-option>
+        <mat-option *ngFor="let type of type_of_car" [value]="type">
+          {{ type }}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+    <br />
+    <mat-form-field appearance="fill">
+      <mat-label>Choose a date</mat-label>
+      <input matInput [matDatepicker]="picker" formControlName="creationDate" />
+      <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+      <mat-datepicker #picker></mat-datepicker>
+    </mat-form-field>
+  </mat-dialog-content>
+  <mat-dialog-actions class="float-right">
+    <button mat-button (click)="closeForm()">Annuler</button>
+    <button
+      mat-raised-button
+      color="primary"
+      type="submit"
+      [disabled]="!brandsForm.valid"
+    >
+      {{ isUpdateMode ? "Modifier" : "Ajouter" }}
+    </button>
+  </mat-dialog-actions>
+</form>

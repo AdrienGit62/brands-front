@@ -1,0 +1,30 @@
+<p>brands-details works!</p>
+
+{{ brands$ | async | json }}
+
+<mat-card class="example-card" *ngIf="brands$ | async; let brands">
+  <mat-card-header>
+    <mat-card-title
+      >{{ brands.brand_name | titlecase }}
+      {{ brands.creator_fullname | uppercase }}</mat-card-title
+    >
+    <mat-card-subtitle>{{ brands.type_of_car | lowercase }}</mat-card-subtitle>
+  </mat-card-header>
+
+  <mat-card-content>
+    <ul>
+      <li><b>Class :</b> {{ brands.contact_email }}</li>
+      <li><b>Date of birth :</b> {{ brands.creationDate }}</li>
+    </ul>
+  </mat-card-content>
+  <mat-card-actions>
+    <button mat-raised-button color="warn" (click)="deleteBrands(brands.id)">
+      Delete
+    </button>
+    <button mat-raised-button color="primary" (click)="updateBrands(brands)">
+      Update
+    </button>
+  </mat-card-actions>
+</mat-card>
+
+<button mat-raised-button color="warn" (click)="goBack()">Go Back</button>
