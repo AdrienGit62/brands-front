@@ -112,8 +112,8 @@
             "prerender": false,
             "ssr": false,
             "browserTarget": "lp-dim-app:build:production",
-            "firebaseProject": "lp-dim-app-ap",
-            "firebaseHostingSite": "lp-dim-app-ap"
+            "firebaseProject": "brandsadrien-d9353",
+            "firebaseHostingSite": "brandsadrien-d9353"
           }
         }
       }

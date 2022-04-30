@@ -1,4 +1,20 @@
 {
+  "targets": {
+    "brands-car": {
+      "hosting": {
+        "brands-app": [
+          "brands-car"
+        ]
+      }
+    },
+    "brandsadrien-d9353": {
+      "hosting": {
+        "lp-dim-app": [
+          "brandsadrien-d9353"
+        ]
+      }
+    }
+  },
   "projects": {
     "default": "brandsadrien-d9353"
   }
